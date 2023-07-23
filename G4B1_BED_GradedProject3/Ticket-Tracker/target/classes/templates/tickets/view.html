@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+	
+<link rel="stylesheet" href="/css/style.css">
+
+<title>Ticket Tracker Application</title>
+</head>
+
+<body>
+	<div>
+		<h4 style="background-color:#0275d8;color:white;height:60px;line-height: 2.2; margin-left: 10px;margin-right: 10px;">
+			<span style="margin-left: 10px">Ticket Tracker Application</span>
+		</h4>
+		<div class="container" style="border: 0.5px solid lightgray; width: 40%" th:object="${ticket}">
+		
+			<p class="h4 mb-4" style="text-align:center;background-color:#F5F5F5;height:40px;border-bottom:0.5px solid lightgray;font-size:30px;" th:text="${ticket.title}"></p>
+
+			<div>
+				<div>
+					<label style="font-weight:bold;font-size:22px;">Id</label><br>
+					<label th:text="${ticket.id}" style="font-size:20px;"></label>
+				</div>
+				<div>
+					<label style="font-weight:bold;font-size:22px;">Creation Date</label><br>
+					<label th:text="${ticket.creationDate}" style="font-size:20px;"></label>
+				</div>
+				<div>
+					<label style="font-weight:bold;font-size:22px;">Short Description</label><br>
+					<label th:text="${ticket.description}" style="font-size:20px;"></label>
+				</div>
+				<div>
+					<label style="font-weight:bold;font-size:22px;">Content</label><br>
+					<label th:text="${ticket.content}" style="font-size:20px;"></label>
+				</div>
+			</div>
+
+			<hr>
+			<a th:href="@{/tickets/list}">Back to Tickets List</a>
+		</div>
+	</div>
+	
+	<div class="footer">
+	    <footer style="background-color: #E8E8E8;">
+		    <div class="text-center p-3">
+		    Copyright © 2023 GreatLearning all rights reserved
+		    </div>
+	  	</footer>
+	</div>
+	
+</body>
+
+</html>
